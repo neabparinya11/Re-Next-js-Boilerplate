@@ -10,28 +10,40 @@ const BaseTemplate = (props: {
   const t = useTranslations('BaseTemplate');
 
   return (
-    <div className="w-full px-1 text-gray-700 antialiased">
-      <div className="mx-auto max-w-screen-md">
-        <header className="border-b border-gray-300">
-          <div className="pb-8 pt-16">
-            <h1 className="text-3xl font-bold text-gray-900">
-              {AppConfig.name}
-            </h1>
-            <h2 className="text-xl">{t('description')}</h2>
+    <div className="w-full bg-violet-400 text-gray-400 antialiased">
+      <div className="w-full">
+        <header className="flex-col border-b border-gray-300 bg-purple-950 py-6">
+          <div className="flex justify-evenly">
+            <div>
+              <h1>Logo</h1>
+            </div>
+            <div className="flex justify-between ">
+              <nav>
+                <ul className="flex flex-wrap gap-x-5 text-xl">
+                  {props.leftNav}
+                </ul>
+              </nav>
+            </div>
+            <div className="flex justify-between">
+              <nav>
+                <ul className="flex flex-wrap gap-x-5 text-xl">
+                  {props.rightNav}
+                </ul>
+              </nav>
+            </div>
           </div>
-
-          <div className="flex justify-between">
-            <nav>
-              <ul className="flex flex-wrap gap-x-5 text-xl">
-                {props.leftNav}
-              </ul>
-            </nav>
-
-            <nav>
-              <ul className="flex flex-wrap gap-x-5 text-xl">
-                {props.rightNav}
-              </ul>
-            </nav>
+          <div className="flex justify-center">
+            <form className="mx-auto flex max-w-md">
+              <div className="relative">
+                <input type="search" className="block w-full p-4 ps-10" />
+                <button
+                  type="submit"
+                  className="absolute bottom-2.5 end-2.5 text-white "
+                >
+                  Search
+                </button>
+              </div>
+            </form>
           </div>
         </header>
 
